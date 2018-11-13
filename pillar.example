@@ -8,13 +8,13 @@ letsencrypt:
   version: 0.26.x                                # if use_packe false and if you want to have specific version
                                                  # of certbot you can enable it without version git.latest is used
 
-  config: |
-    server = https://acme-v01.api.letsencrypt.org/directory
-    email = webmaster@example.com
-    authenticator = webroot
-    webroot-path = /var/lib/www
-    agree-tos = True
-    renew-by-default = True
+  config:
+    server: https://acme-v01.api.letsencrypt.org/directory
+    email: webmaster@example.com
+    authenticator: webroot
+    webroot-path: /var/lib/www
+    agree-tos: 'True'
+    renew-by-default: 'True'
   config_dir:
     path: /etc/letsencrypt
     user: root

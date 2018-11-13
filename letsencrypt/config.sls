@@ -15,5 +15,8 @@ letsencrypt-config:
     - name: {{ letsencrypt.config_dir.path }}/cli.ini
     - user: {{ letsencrypt.config_dir.user }}
     - group: {{ letsencrypt.config_dir.group }}
+    - source: salt://letsencrypt/files/cli.ini.jinja
+    - template: jinja
     - makedirs: true
-    - contents_pillar: letsencrypt:config
+    - context:
+      config: {{ salt['pillar.get']('letsencrypt:config') }}
